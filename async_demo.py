@@ -46,7 +46,6 @@ def connect(args):
     # print(output)
     return output
 
-
 # parse the page
 def parse_url(doc):
     info = {}
@@ -59,9 +58,6 @@ def parse_url(doc):
 
 
 # computer the program running time
-import time
-
-
 def cost_time(func):
     def wrap(*args):
         s = time.time()
@@ -69,7 +65,6 @@ def cost_time(func):
         print('Cost:{}'.format(time.time() - s))
 
     return wrap
-
 
 # sync task
 @cost_time
@@ -100,7 +95,6 @@ def task(url):
 
 def split_line(des):
     print('-' * 20 + des + '-' * 20)
-
 
 @cost_time
 def async_by_threadsPool(fun, *args):
@@ -162,7 +156,6 @@ def async_task_by_ProcessPoolMap(fun,*args):
         for word in words:
             result=p.map(fun,((url_base,word),))
             print (result)
-
 
 
 if __name__ == '__main__':
